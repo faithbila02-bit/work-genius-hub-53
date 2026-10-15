@@ -73,7 +73,7 @@ function TasksPage() {
   const active = tasks.filter((t) => !t.done);
 
   const plan = async () => {
-    if (active.length === 0) return toast.error("Add some open tasks first.");
+    if (active.length === 0) { toast.error("Add some open tasks first."); return; }
     const list = active.map((t) => `- ${t.title} (priority: ${t.priority}, due: ${t.due})`).join("\n");
     const ok = await g.run(`Today is ${today()}. Working hours 08:30–17:00.\nOpen tasks:\n${list}`);
     if (ok) logActivity("planner", "Generated a daily schedule", 15);

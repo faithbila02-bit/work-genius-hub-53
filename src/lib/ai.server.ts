@@ -6,7 +6,7 @@ export const MODEL = "openai/gpt-6-astra";
 const BASE = "https://ai.gateway.lovable.dev/v1";
 
 export function startAiStream(request: Request, messages: ModelMessage[], instructions: string) {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) return null;
   const runIdFetch = createLovableAiGatewayRunIdFetch(getLovableAiGatewayRunId(request));
   const provider = createOpenAI({

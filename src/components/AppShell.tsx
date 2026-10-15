@@ -103,6 +103,6 @@ export function PageHeader({ icon: Icon, title, description, actions }: { icon: 
   );
 }
 
-export function Panel({ children, className }: { children: ReactNode; className?: string }) {
+export function Panel({ children, className }: { children?: ReactNode; className?: string }) {
   return <div className={cn("rounded-2xl border bg-card p-5 shadow-[var(--shadow-card)]", className)}>{children}</div>;
 }

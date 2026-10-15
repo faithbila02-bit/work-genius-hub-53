@@ -108,7 +108,7 @@ export const activityStore = createStore<Activity[]>("wp.activity", [
   { id: "a4", kind: "research", text: "Researched “hybrid work best practices”", at: now - 30 * H },
 ]);
 
-export const statsStore = createStore({ generations: 14, minutesSaved: 185 });
+export const statsStore = createStore<{ generations: number; minutesSaved: number }>("wp.stats", { generations: 14, minutesSaved: 185 });
 
 export const threadsStore = createStore<Thread[]>("wp.threads", []);
 
