@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useGenerate } from "@/lib/generate";
 import { logActivity, saveResult } from "@/lib/store";
 import { pageMeta } from "@/lib/meta";
-import { Chips } from "./email";
+import { Chips } from "@/components/Chips";
 
 export const Route = createFileRoute("/research")({
   head: () => pageMeta("AI Research Assistant", "Research topics, get clear summaries and references."),

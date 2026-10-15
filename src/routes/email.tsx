@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useGenerate } from "@/lib/generate";
 import { logActivity, saveResult } from "@/lib/store";
 import { pageMeta } from "@/lib/meta";
-import { cn } from "@/lib/utils";
+import { Chips } from "@/components/Chips";
 
 export const Route = createFileRoute("/email")({
   head: () => pageMeta("Smart Email Generator", "Generate professional emails in formal, friendly or persuasive tones."),
@@ -59,18 +59,3 @@ function EmailPage() {
   );
 }
 
-export function Chips({ label, options, value, onChange }: { label: string; options: string[]; value: string; onChange: (v: string) => void }) {
-  return (
-    <div className="space-y-1.5">
-      <Label>{label}</Label>
-      <div className="flex flex-wrap gap-2">
-        {options.map((o) => (
-          <button type="button" key={o} onClick={() => onChange(o)} aria-pressed={value === o}
-            className={cn("rounded-full border px-3 py-1.5 text-sm transition", value === o ? "border-primary bg-primary text-primary-foreground" : "hover:border-primary/50 hover:bg-primary-soft")}>
-            {o}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}

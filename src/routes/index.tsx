@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Clock, Sparkle, ListChecks, Mail, FileText, S
 import { Panel } from "@/components/AppShell";
 import { activityStore, savedStore, statsStore, tasksStore, timeAgo } from "@/lib/store";
 import { pageMeta } from "@/lib/meta";
+import { KIND_ICON } from "@/components/Chips";
 import { Progress } from "@/components/ui/progress";
 
 export const Route = createFileRoute("/")({
@@ -18,7 +19,6 @@ const TOOLS = [
   { to: "/chat", label: "AI Chatbot", desc: "Ask anything about your work.", icon: MessagesSquare },
 ] as const;
 
-export const KIND_ICON = { email: Mail, meeting: FileText, research: Search, planner: ListChecks, chat: MessagesSquare, task: CheckCircle2 };
 
 function Dashboard() {
   const tasks = tasksStore.use();
